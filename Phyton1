@@ -1,0 +1,59 @@
+nev = str(input("Add meg a neved: "))
+print("Üdvözöllek, " + nev)
+kor = int(input('Írd be az életkorod: '))
+if kor <= 14:
+    print('Nehogy elindulj! Anyuci veled van?')
+elif kor >= 15 and kor <=30:
+    print('Csak lassan, ne légy szeleburdi! Jól gondold meg hova lépsz!')
+elif kor >= 31 and kor <= 45:
+    print ('Ez az! Jó erőben vagy ez a te küldetésed!')
+elif kor >= 46 and kor < 70:
+
+    print('Jól gondold meg! Van elég erőd hozzá?')
+else:
+    print('Figyu! A temető balra van! :D')
+print("Egy út áll elotted.")
+print("Elindulsz rajta")
+arany = 0
+print("Most " + str(arany) + " aranyad van.")
+print('Az út egyre mélyebben vezet az erdőbe. A fák lombja már pár lépés után áthatolhatatlan takarót borít föléd.')
+print('A levegő hűvösebbé válik, és a talpad alatt törő ágak zaja közé ismeretlen neszek keverednek. Lenézel a kitaposott ösvény szélére...')
+tuleltem = True
+talalt_arany = 4
+
+print("Találtál " + str(talalt_arany) + " aranyat.")
+uj_arany = arany + talalt_arany
+print("Most " + str(uj_arany) + " aranyad van.")
+print("Kerüld el a csapdát!")
+
+from random import randint
+print("Juss messzebb az erdőben!")
+tuleltem = True
+arany = 4
+tavolsag = 0
+elet = 3
+print( str(elet) + ' életed van!')
+while tuleltem:
+    csapda_ut = randint(1, 3)
+    print("Útelágazáshoz értél. Három út van előtted...")
+    print("De tudod, hogy az egyik csapdát rejt!")
+    print("Merre indulsz?")
+    print("Most ennyi aranyad van: " + str(arany))
+    valasztott_ut = input("1, 2, vagy 3? ")
+    valasztott_ut_szammal = int(valasztott_ut)
+    # if    (ide kell változó, hogy ne 0 pénzed legyen!)
+    if csapda_ut == valasztott_ut_szammal:
+        print("Csapda!")
+        elet = elet -1
+        print("Még ennyi életed maradt: " + str(elet))
+    elif elet == 1 or elet <= 0:
+        tuleltem = False
+    else:
+        print("Biztonságos út! Most tovább mehetsz.")
+        arany = arany + randint(-1, 5)
+        tavolsag = tavolsag + 1
+print("Sajnos vége a játéknak...")
+print("Megtett távolság: " + str(tavolsag))
+print("Összegyűjtött arany: " + str(arany))
+print("Nincs több életed! " + str((elet)-1))
+print('Játszunk legközelebb is! :D')
